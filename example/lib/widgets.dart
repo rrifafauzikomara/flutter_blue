@@ -134,9 +134,7 @@ class ServiceTile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text('Service'),
-            Text('0x${service.uuid.toString().toUpperCase().substring(4, 8)}',
-                style: Theme.of(context).textTheme.body1?.copyWith(
-                    color: Theme.of(context).textTheme.caption?.color))
+            Text('0x${service.uuid.toString().toUpperCase().substring(4, 8)}'),
           ],
         ),
         children: characteristicTiles,
@@ -182,9 +180,7 @@ class CharacteristicTile extends StatelessWidget {
               children: <Widget>[
                 Text('Characteristic'),
                 Text(
-                    '0x${characteristic.uuid.toString().toUpperCase().substring(4, 8)}',
-                    style: Theme.of(context).textTheme.body1?.copyWith(
-                        color: Theme.of(context).textTheme.caption?.color))
+                    '0x${characteristic.uuid.toString().toUpperCase().substring(4, 8)}')
               ],
             ),
             subtitle: Text(value.toString()),
@@ -242,11 +238,7 @@ class DescriptorTile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text('Descriptor'),
-          Text('0x${descriptor.uuid.toString().toUpperCase().substring(4, 8)}',
-              style: Theme.of(context)
-                  .textTheme
-                  .body1
-                  ?.copyWith(color: Theme.of(context).textTheme.caption?.color))
+          Text('0x${descriptor.uuid.toString().toUpperCase().substring(4, 8)}'),
         ],
       ),
       subtitle: StreamBuilder<List<int>>(
@@ -289,11 +281,9 @@ class AdapterStateTile extends StatelessWidget {
       child: ListTile(
         title: Text(
           'Bluetooth adapter is ${state.toString().substring(15)}',
-          style: Theme.of(context).primaryTextTheme.subhead,
         ),
         trailing: Icon(
           Icons.error,
-          color: Theme.of(context).primaryTextTheme.subhead?.color,
         ),
       ),
     );
